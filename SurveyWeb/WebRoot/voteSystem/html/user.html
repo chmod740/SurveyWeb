@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive Nav &middot; Advanced Left Navigation Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--[if lte IE 8]><link rel="stylesheet" href="../css/responsive-nav.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="../css/styles.css"><!--<![endif]-->
+    <script src="../js/responsive-nav.js"></script>
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/flat-ui.css" rel="stylesheet">
+    <link href="../docs/assets/css/demo.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="../dist/js/vendor/html5shiv.js"></script>
+    <script src="../dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div role="navigation" id="foo" class="nav-collapse">
+      <ul>
+        <li class="active"><a href="user.html">管理员主页</a></li>
+        <li><a href="manageFrom.html">考核管理</a></li>
+        <li><a href="addFrom.html">添加考核</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div role="main" class="main">
+      <a href="#nav" class="nav-toggle">Menu</a>
+      <p class="intro">欢迎回来</p>
+      <p class="">您上次登陆的时间为：the</p>
+    </div>
+
+    <script>
+      var navigation = responsiveNav("foo", {customToggle: ".nav-toggle"});
+    </script>
+  </body>
+</html>

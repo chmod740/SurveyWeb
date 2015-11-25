@@ -1,0 +1,21 @@
+#MyEclipse Hibernate Properties
+#Tue Nov 24 16:32:21 CST 2015
+genBasicCompId=false
+sessionFactoryName=com.imudges.survey.DAO.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/SurveyWeb/src/hibernate.cfg.xml
+createConfigFile=true
+baseDaoClass=BaseHibernateDAO

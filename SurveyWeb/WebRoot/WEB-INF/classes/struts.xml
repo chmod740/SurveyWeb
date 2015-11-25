@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <!-- 配置一系列常量 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <!-- constant name="struts.devMode" value="true"/ -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.objectFactory.spring.autoWire" value="auto"></constant>
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+    <constant name="struts.multipart.maxSize" value="100000000"/> 
+	<package name="default" namespace="/"
+		extends="struts-default, json-default">
+		<!-- 配置拦截器 -->
+		<interceptors>
+		    <!-- 定义xss拦截器 -->
+		    <interceptor name="xssInterceptor" class="xssInterceptor"></interceptor>
+		   	<interceptor name="csrfInterceptor" class="csrfInterceptor"></interceptor>
+		    <!-- 定义一个包含xss拦截的拦截栈 -->
+		    <interceptor-stack name="myDefault">
+		        <interceptor-ref name="xssInterceptor"></interceptor-ref>
+		        <interceptor-ref name="csrfInterceptor"></interceptor-ref>
+		        <interceptor-ref name="defaultStack"></interceptor-ref>
+		    </interceptor-stack>
+		</interceptors>
+		<!-- 这个必须配置，否则拦截器不生效 -->
+		<default-interceptor-ref name="myDefault"></default-interceptor-ref>
+		
+		<action name="login" class="loginAction">
+		    <result name="login">/jsp/login.jsp</result>
+		    <result name="success" type="redirect">/admin.action</result>
+		    <result name="invalid.token">/jsp/tokenError.jsp</result>
+		</action>
+		<!--  
+		<action name="admin" class="adminAction">
+		    <result name="login" type="redirect">/logout.action</result>
+		    <result name="success">/jsp/admin.jsp</result>
+		    <result name="invalid.token">/jsp/tokenError.jsp</result>
+		</action>
+		-->
+	</package>
+</struts>    

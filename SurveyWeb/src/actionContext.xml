@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/context"
+xmlns:http="http://servicemix.apache.org/http/1.0" xmlns:bar="http://testserver"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://servicemix.apache.org/http/1.0
+http://servicemix.apache.org/schema/servicemix-http-3.2.3.xsd"
+default-autowire="byName">
+	<!-- 拦截器 -->
+    <bean id="xssInterceptor" class="com.imudges.survey.interceptor.XssInterceptor" scope="prototype" autowire="default"></bean>
+    <bean id="csrfInterceptor" class="com.imudges.survey.interceptor.CsrfInterceptor" scope="prototype" autowire="default"></bean>
+    
+    <!-- action bean对象 -->
+    <!-- 
+    <bean id="indexAction" class="me.hupeng.homeworkweb.action.IndexAction" scope="prototype" autowire="default"></bean>
+	 -->
+	<bean id="loginAction" class="com.imudges.survey.action.LoginAction" scope="prototype" autowire="default"></bean>
+	<bean id="adminAction" class="com.imudges.survey.action.AdminAction" scope="prototype" autowire="default"></bean>
+</beans>
