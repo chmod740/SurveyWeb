@@ -8,20 +8,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<base href="<%=basePath%>">
-
-<title>管理后台-登录</title>
-
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-<style>
+    <meta charset="utf-8">
+    <title>乌拉特前旗干部考核系统</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="voteSystem/dist/js/vendor/jquery.min.js"></script>
+    <style>
 body {
 	background-color: #FEFEFE;
 }
@@ -36,22 +27,44 @@ body {
 	margin: 30px 0;
 }
 </style>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    
+    <link href="voteSystem/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="voteSystem/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="voteSystem/docs/assets/css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="voteSystem/img/favicon.ico">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="dist/js/vendor/html5shiv.js"></script>
+    <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
 </head>
-
-<body>
-	<s:form action="login.action" method="post">
-		<s:fielderror name="errorInfo"></s:fielderror>
+<body style="height: 100%; background: #1ABC9C;">
+<div style="width: 80%; margin: 0 auto; margin-top: 100px;">
+	<form action="login.action" method="post">
+    <div class="login-form">
+        <div class="form-group">
+            <a>乌拉特前旗干部考核系统</a>
+        </div>
+        <div class="form-group">
+            <input type="text" name="username" class="form-control login-field" value="" placeholder="请输入用户名" id="login-name">
+            <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
 		<s:token name="loginToken"></s:token>
-		<s:textfield name="username" key="用户名"></s:textfield>
-		<s:password name="password" key="密码"></s:password>
-		<%--Start  Code--%>
-		<div class="row">
-			<div id="div_geetest_lib"></div>
-			<div id="div_id_embed"></div>
-			<script type="text/javascript">
-				
+        <div class="form-group">
+            <input type="password" name="password" class="form-control login-field" value="" placeholder="请输入密码" id="login-pass">
+            <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+        
+        <div class="row" style="">
+				<div id="div_geetest_lib"></div>
+				<div id="div_id_embed"></div>
 
+				<%--End  Code--%>
+
+				<script type="text/javascript">
+				
+				<%--
 				function geetest_ajax_results() {
 					//TODO, not necessory a geetest ajax demo,
 					$.ajax({
@@ -63,7 +76,7 @@ body {
 						}
 					});
 				}
-				
+				--%>
 				
 					var gtFailbackFrontInitial = function(result) {
 						var s = document.createElement('script');
@@ -139,11 +152,23 @@ body {
 								}
 							})
 				</script>
-		</div>
-		<%--End  Code--%>
-		<s:submit key="submit" value="登录"></s:submit>
-	</s:form>
-	
-	
+			</div>
+        
+        <s:fielderror name="errorInfo"></s:fielderror>
+        <input class="btn btn-primary btn-lg btn-block" type="submit" value="登录"/>
+        <a class="login-link" href="#">忘记了你的密码？</a>
+    </div>
+    </form>
+</div>
+<script src="voteSystem/dist/js/vendor/jquery.min.js"></script>
+<script src="voteSystem/dist/js/vendor/video.js"></script>
+<script src="voteSystem/dist/js/flat-ui.min.js"></script>
+<script src="voteSystem/docs/assets/js/application.js"></script>
+<script>
+    function login(){
+        document.location="html/user.html";
+    }
+</script>
 </body>
 </html>
+

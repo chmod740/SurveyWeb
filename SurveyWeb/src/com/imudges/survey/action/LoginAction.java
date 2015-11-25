@@ -1,7 +1,10 @@
 package com.imudges.survey.action;
 
+import java.io.PrintWriter;
+
 import org.apache.struts2.ServletActionContext;
 
+import com.geetest.sdk.java.GeetestLib;
 import com.imudges.survey.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -40,20 +43,37 @@ public class LoginAction extends  ActionSupport{
 		if (ServletActionContext.getRequest().getMethod().equals("GET")) {
 			return LOGIN;
 		}else {
-			System.out.println(username);
-			System.out.println(password);
+			GeetestLib geetest = GeetestLib.getGtSession(ServletActionContext.getRequest());
+			int gt_server_status_code = GeetestLib
+					.getGtServerStatusSession(ServletActionContext.getRequest());
+			String gtResult = new String();
+			if (gt_server_status_code == 1) {
+				gtResult = geetest.enhencedValidateRequest(ServletActionContext.getRequest());
+				
+			}else {
+				this.addFieldError("errorInfo", "请先正确移动滑块");
+				return LOGIN;
+			}
+			
+			if (!gtResult.equals(GeetestLib.success_res)) {
+				// TODO handle the Success result
+				this.addFieldError("errorInfo", "请先正确移动滑块完成验证");
+				return LOGIN;
+			}
+			
+			
 			if (username == null || password == null) {
-				this.addFieldError("errorinfo", "登录参数有误");
+				this.addFieldError("errorInfo", "登录参数有误");
 				return LOGIN;
 			}
 			if (username.equals("") || password.equals("")) {
-				this.addFieldError("errorinfo", "用户名或者密码不能为空");
+				this.addFieldError("errorInfo", "用户名或者密码不能为空");
 				return LOGIN;
 			}
 			if (userService.login(username, password)) {
 				return SUCCESS;
 			}else {
-				this.addFieldError("errorinfo", "用户名或者密码错误");
+				this.addFieldError("errorInfo", "用户名或者密码错误");
 				return LOGIN;
 			}
 		}
