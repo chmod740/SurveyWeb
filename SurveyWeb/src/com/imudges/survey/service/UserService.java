@@ -47,4 +47,18 @@ public class UserService {
 		userDAO.save(user);
 		return true;
 	}
+	
+	/* 获取已经正确登录的用户对象 */
+	public User getCurrentUser(){
+		return user;
+	}
+	
+	/* 以用户名获取USER_ID */
+	public int getUserIdByUsername(String username){
+		List<User>list = userDAO.findByUsername(username);
+		if (list.isEmpty()) {
+			return 0;
+		}
+		return list.get(0).getUserId();
+	}
 }

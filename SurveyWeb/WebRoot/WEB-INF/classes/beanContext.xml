@@ -11,4 +11,5 @@ http://servicemix.apache.org/http/1.0
 http://servicemix.apache.org/schema/servicemix-http-3.2.3.xsd"
 default-autowire="byName">
 	<bean id="user" class="com.imudges.survey.bean.User" scope="prototype" autowire="default"></bean>
+	<bean id="loginlog" class="com.imudges.survey.bean.Loginlog" scope="prototype" autowire="default"></bean>
 </beans>

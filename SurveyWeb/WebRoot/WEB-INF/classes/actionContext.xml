@@ -20,4 +20,5 @@ default-autowire="byName">
 	 -->
 	<bean id="loginAction" class="com.imudges.survey.action.LoginAction" scope="prototype" autowire="default"></bean>
 	<bean id="adminAction" class="com.imudges.survey.action.AdminAction" scope="prototype" autowire="default"></bean>
+	<bean id="logoutAction" class="com.imudges.survey.action.LogoutAction" scope="prototype" autowire="default"></bean>
 </beans>

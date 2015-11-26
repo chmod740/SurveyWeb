@@ -37,5 +37,8 @@
 		    <result name="invalid.token">/voteSystem/jsp/tokenError.jsp</result>
 		</action>
 		
+		<action name="logout" class="logoutAction">
+		    <result name="success">/voteSystem/jsp/login.jsp</result>
+		</action>
 	</package>
 </struts>    

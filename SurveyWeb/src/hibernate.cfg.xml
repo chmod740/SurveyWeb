@@ -20,7 +20,7 @@
 		<property name="myeclipse.connection.profile">
 			SurveyWeb
 		</property>
-		
+
 		<!-- 设置二级缓存插件EHCache的Provider类-->
 		<!--  
 			< property name="hibernate.cache.provider_class">  
@@ -39,7 +39,7 @@
 		<property name="com.mchange.v2.c3p0.ComboPooledDataSource">
 			org.hibernate.connection.C3P0ConnectionProvider
 		</property>
-
+		<property name="automaticTestTable">test</property>
 		<property name="hibernate.c3p0.max_size">20</property>
 		<property name="hibernate.c3p0.min_size">5</property>
 		<property name="hibernate.c3p0.timeout">50000</property>
@@ -49,9 +49,13 @@
 		<property name="hibernate.c3p0.acquire_increment">2</property>
 		<!-- 是否验证，检查连接 -->
 		<property name="hibernate.c3p0.validate">false</property>
-		<property name="hibernate.connection.release_mode">after_statement</property>
-		
+		<property name="hibernate.connection.release_mode">
+			after_statement
+		</property>
+
 		<mapping resource="com/imudges/survey/bean/User.hbm.xml" />
+		<mapping resource="com/imudges/survey/bean/Loginlog.hbm.xml" />
+
 
 	</session-factory>
 
