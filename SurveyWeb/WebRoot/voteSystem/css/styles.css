@@ -43,12 +43,10 @@ h1 {
   line-height: 1;
   color: #222;
   margin-bottom: .5em;
-  float: left;
   width: 100%;
 }
 
 h2 {
-  float: left;
   width: 100%;
   font-size: 1.5em;
   color: #222;
@@ -56,7 +54,6 @@ h2 {
 }
 
 p {
-  float: left;
   width: 100%;
   margin-bottom: 1em;
 }

@@ -64,8 +64,8 @@ $(document).ready(function(){
     });
 
     $("#button4").click(function(){
-        $(this).parent().parent().parent().find('#p').find('li:last').parent().parent().remove();
+        $(this).parent().parent().parent().find('#p').find('.child:last').remove();
     });
 
-    $(window).bind('beforeunload',function(){return '您输入的信息尚未保存，确定离开此页面吗？';});
+    //$(window).bind('beforeunload',function(){return '您输入的信息尚未保存，确定离开此页面吗？';});
 });
