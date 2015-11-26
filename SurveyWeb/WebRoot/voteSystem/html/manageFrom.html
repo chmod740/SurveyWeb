@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <title>Responsive Nav &middot; Advanced Left Navigation Demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <!--[if lte IE 8]><link rel="stylesheet" href="../css/responsive-nav.css"><![endif]-->
     <!--[if gt IE 8]><!--><link rel="stylesheet" href="../css/styles.css"><!--<![endif]-->
     <script src="../js/responsive-nav.js"></script>
+
     <!-- Loading Bootstrap -->
+    <script src="../dist/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/bootstrap/js/bootstrap.min.js"></script>
     <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
 
     <!-- Loading Flat UI -->
@@ -25,15 +29,67 @@
 
     <div role="navigation" id="foo" class="nav-collapse">
       <ul>
-        <li><a href="user.html">管理员主页</a></li>
+        <li><a href="user.html">主页</a></li>
         <li class="active"><a href="manageFrom.html">考核管理</a></li>
         <li><a href="addFrom.html">添加考核</a></li>
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
 
+
     <div role="main" class="main">
       <a href="#nav" class="nav-toggle">Menu</a>
+      <br><br>
+
+
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>...</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
 
     </div>
 
