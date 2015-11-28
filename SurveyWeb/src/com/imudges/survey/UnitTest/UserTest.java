@@ -16,9 +16,7 @@ import com.imudges.survey.bean.User;
 import com.imudges.survey.service.UserService;
 import com.imudges.survey.util.MD5;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations ={"classpath*:*/*Context.xml"})
-@Transactional  
+
 public class UserTest {
 	
 	private UserService userService;
@@ -64,5 +62,10 @@ public class UserTest {
 			System.out.println(loginlog.getResult());
 			System.out.println(loginlog.getIp());
 		}
+	}
+	
+	@Test
+	public void sayHello(){
+		System.out.println("hello world");
 	}
 }
