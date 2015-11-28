@@ -27,11 +27,11 @@
 		
 		<action name="login" class="loginAction">
 		    <result name="login">/voteSystem/jsp/login.jsp</result>
-		    <result name="success" type="redirect">/admin.action</result>
+		    <result name="success" type="redirect">/user.action</result>
 		    <result name="invalid.token" type="redirect">/login.action</result>
 		</action>
 		 
-		<action name="admin" class="adminAction">
+		<action name="user" class="userAction">
 		    <result name="login" type="redirect">/logout.action</result>
 		    <result name="success">/voteSystem/jsp/admin.jsp</result>
 		    <result name="invalid.token">/voteSystem/jsp/tokenError.jsp</result>

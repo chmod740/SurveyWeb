@@ -2,7 +2,7 @@ package com.imudges.survey.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AdminAction extends ActionSupport{
+public class UserAction extends ActionSupport{
 
 	@Override
 	public String execute() throws Exception {
