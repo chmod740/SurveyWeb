@@ -12,7 +12,7 @@ public class LogoutAction extends ActionSupport{
 		// TODO Auto-generated method stub
 		Map map = ActionContext.getContext().getSession();
 		map.clear();
-		this.addFieldError("errorInfo", "注销成功");
+		this.addFieldError("errorInfo", "您已注销登录");
 		return SUCCESS;
 	}
 }

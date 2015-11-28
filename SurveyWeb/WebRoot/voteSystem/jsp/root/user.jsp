@@ -10,23 +10,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="utf-8">
     <title>Responsive Nav &middot; Advanced Left Navigation Demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!--[if lte IE 8]><link rel="stylesheet" href="../css/responsive-nav.css"><![endif]-->
-    <!--[if gt IE 8]><!--><link rel="stylesheet" href="../css/styles.css"><!--<![endif]-->
-    <script src="../js/responsive-nav.js"></script>
+    <!--[if lte IE 8]><link rel="stylesheet" href="voteSystem/css/responsive-nav.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="voteSystem/css/styles.css"><!--<![endif]-->
+    <script src="voteSystem/js/responsive-nav.js"></script>
     <!-- Loading Bootstrap -->
-    <script src="../dist/js/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="../dist/bootstrap/js/bootstrap.min.js"></script>
-    <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <script src="voteSystem/dist/js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="voteSystem/dist/bootstrap/js/bootstrap.min.js"></script>
+    <link href="voteSystem/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
 
     <!-- Loading Flat UI -->
-    <link href="../dist/css/flat-ui.css" rel="stylesheet">
-    <link href="../docs/assets/css/demo.css" rel="stylesheet">
+    <link href="voteSystem/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="voteSystem/docs/assets/css/demo.css" rel="stylesheet">
 
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="../dist/js/vendor/html5shiv.js"></script>
-    <script src="../dist/js/vendor/respond.min.js"></script>
+    <script src="voteSystem/dist/js/vendor/html5shiv.js"></script>
+    <script src="voteSystem/dist/js/vendor/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <br>
       <div class="jumbotron">
         <h1>欢迎回来</h1>
-        <p>admin <span class="label label-success">管理员</span></p>
+        <p>admin <span class="label label-success">一级管理员</span></p>
 
         <p>您上次登陆的时间为：2015年11月26日</p>
         <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" href="#" role="button">修改密码</a> <a class="btn btn-warning btn-lg" href="#" role="button">注销登陆</a></p>

@@ -96,7 +96,8 @@ public class LoginAction extends  ActionSupport{
 				map.put("privilege", user.getPrivilege());
 				map.put("ip", ServletActionContext.getRequest().getRemoteAddr());
 				loginlogService.addLoginLog(userService.getUserIdByUsername(username), ServletActionContext.getRequest().getRemoteAddr(), System.currentTimeMillis(), 1, "");
-				return SUCCESS;
+				//root用户返回root 非root用户返回user
+				return "root";
 			}else {
 				loginlogService.addLoginLog(userService.getUserIdByUsername(username), ServletActionContext.getRequest().getRemoteAddr(), System.currentTimeMillis(), 0, "用户名或者密码错误");
 				this.addFieldError("errorInfo", "用户名或者密码错误");
