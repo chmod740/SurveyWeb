@@ -46,7 +46,7 @@ public class ChangePasswordAction extends ActionSupport{
 			ServletActionContext.getResponse().setStatus(500);
 		}else {
 			//先验证用户的身份，身份验证成功以后执行修改密码操作
-			if (userService.login(securityAction.getUsername(), new MD5().encryptPassword(oldPassword))) {
+			if (userService.login(securityAction.getUsername(),oldPassword)) {
 				userService.changePassword(newPassword);
 			}else {
 				ServletActionContext.getResponse().setStatus(500);

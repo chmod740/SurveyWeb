@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Responsive Nav &middot; Advanced Left Navigation Demo</title>
+    <title>乌拉特前旗干部考核系统</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!--[if lte IE 8]><link rel="stylesheet" href="voteSystem/css/responsive-nav.css"><![endif]-->
     <!--[if gt IE 8]><!--><link rel="stylesheet" href="voteSystem/css/styles.css"><!--<![endif]-->
@@ -28,14 +28,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="voteSystem/dist/js/vendor/html5shiv.js"></script>
     <script src="voteSystem/dist/js/vendor/respond.min.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript" src="voteSystem/ajax/changePassword.js"></script>
   </head>
   <body>
 
     <div role="navigation" id="foo" class="nav-collapse">
       <ul>
-        <li class="active"><a href="user.html">主页</a></li>
-        <li><a href="manageFrom.html">考核管理</a></li>
-        <li><a href="addFrom.html">添加考核</a></li>
+        <li class="active"><a href="root_User.action">主页</a></li>
+        <li><a href="#">考核管理</a></li>
+        <li><a href="#">添加考核</a></li>
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
@@ -51,11 +53,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         <p>您上次登陆的时间为：${root_UserModel.lastLoginTime }</p>
         <p>您上次登陆的IP为：${root_UserModel.lastLoginIp }(${root_UserModel.lastLoginAddress })</p>
-        <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" href="#" role="button">修改密码</a> <a class="btn btn-warning btn-lg" href="#" role="button">注销登陆</a></p>
+        <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" href="#" role="button">修改密码</a> <a class="btn btn-warning btn-lg" href="logout.action" role="button">注销登陆</a></p>
         <p></p>
       </div>
     </div>
-
 
 
     <script>
@@ -73,13 +74,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <h4 class="modal-title" id="myModalLabel">修改密码</h4>
           </div>
           <div class="modal-body">
-            <input type="text" class="form-control input-sm" style="display:inline;">
-            <input type="text" class="form-control input-sm" style="display:inline;">
-            <input type="text" class="form-control input-sm" style="display:inline;">
+            <input type="text" class="form-control input-sm" id="oldPass" placeholder="请输入旧密码" style="display:inline;">
+            <input type="text" class="form-control input-sm" id="newPass1" placeholder="请输入新密码" style="display:inline;">
+            <input type="text" class="form-control input-sm" id="newPass2" placeholder="请再次输入新密码" style="display:inline;">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn-primary">保存</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="changePassowrd()">保存</button>
           </div>
         </div>
       </div>
