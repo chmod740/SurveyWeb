@@ -62,4 +62,15 @@ public class UserService {
 		}
 		return list.get(0).getUserId();
 	}
+	
+	/**
+	 * 修改用户密码
+	 * 前提是用户已经正确登录，否则不会执行正确的操作修改密码操作
+	 * */
+	public void changePassword(String password){
+		if (user.getUsername() != null && user.getUserId() != null) {
+			user.setPassword(new MD5().encryptPassword(password));
+			userDAO.save(user);
+		}
+	}
 }

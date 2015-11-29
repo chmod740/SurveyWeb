@@ -40,5 +40,9 @@
 		<action name="logout" class="logoutAction">
 		    <result name="success">/voteSystem/jsp/login.jsp</result>
 		</action>
+		
+		<action name="changePassword" class="changePasswordAction">
+		    <result name="success">/voteSystem/jsp/blank.jsp</result>
+		</action>
 	</package>
 </struts>    
