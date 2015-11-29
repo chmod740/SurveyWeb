@@ -21,9 +21,14 @@ public class LoginlogService {
 		this.loginlog = loginlog;
 	}
 	
-	public List<Loginlog>getLastByUserId(int userId){
+	public Loginlog getLastLoginlogByUserId(int userId){
 		List<Loginlog>list;
-		return null;
+		list = loginlogDAO.getLastList(userId);
+		if(list.size() < 2){
+			return null;
+		}else {
+			return list.get(1);
+		}
 	}
 	
 	public void addLoginLog(int userId,String ip,Long time,int result){

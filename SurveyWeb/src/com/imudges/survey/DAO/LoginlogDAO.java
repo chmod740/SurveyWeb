@@ -171,7 +171,7 @@ public class LoginlogDAO extends BaseHibernateDAO {
 			
 			String queryString = "from Loginlog as model where model.result = 1 and model.userId= ? order by model.loginId desc";
 			Query queryObject = getSession().createQuery(queryString);
-			queryObject.setMaxResults(3);//默认取3条记录
+			queryObject.setMaxResults(2);//默认取1条记录
 			queryObject.setParameter(0, value);
 			return queryObject.list();
 		} catch (RuntimeException e) {

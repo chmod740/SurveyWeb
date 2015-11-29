@@ -3,6 +3,7 @@ package com.imudges.survey.action;
 import java.util.Map;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.omg.CORBA.PUBLIC_MEMBER;
@@ -11,9 +12,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SecurityAction extends ActionSupport {
-	private Map<String, Object>session;
+	private HttpSession session;
 	public SecurityAction(){
-		session = ActionContext.getContext().getSession();
+		session = ServletActionContext.getRequest().getSession();
 	}
 	
 	public boolean checkRoot(){
@@ -21,7 +22,7 @@ public class SecurityAction extends ActionSupport {
 		if (checkIpAddress() == false) {
 			return false;
 		}
-		Integer privilege = (Integer)session.get("privilege");
+		Integer privilege = (Integer)session.getAttribute("privilege");
 		if (privilege == null) {
 			return false;
 		}else {
@@ -38,7 +39,7 @@ public class SecurityAction extends ActionSupport {
 		if (checkIpAddress() == false) {
 			return false;
 		}
-		Integer privilege = (Integer)session.get("privilege");
+		Integer privilege = (Integer)session.getAttribute("privilege");
 		if (privilege == null) {
 			return false;
 		}else {
@@ -51,18 +52,18 @@ public class SecurityAction extends ActionSupport {
 	}
 	
 	public Integer getPrivilege(){
-		return (Integer)session.get("privilege");
+		return (Integer)session.getAttribute("privilege");
 	}
 	
 	public String getUsername(){
-		return (String)session.get("username");
+		return (String)session.getAttribute("username");
 	}
 	
 	/**
 	 * 判断登录时的ip与访问当前页面时候的ip是不是一样的，可以防止xss攻击
 	 * */
 	public boolean checkIpAddress(){
-		String loginIp = (String)session.get("ip");
+		String loginIp = (String)session.getAttribute("ip");
 		String nowIp = (String)ServletActionContext.getRequest().getRemoteAddr();
 		if (loginIp == null || nowIp == null) {
 			return false;
@@ -76,6 +77,6 @@ public class SecurityAction extends ActionSupport {
 	}
 	
 	public Integer getUserId(){
-		return (Integer)session.get("userId");
+		return (Integer)session.getAttribute("userId");
 	}
 }

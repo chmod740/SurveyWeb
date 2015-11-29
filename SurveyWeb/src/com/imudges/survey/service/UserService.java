@@ -32,6 +32,7 @@ public class UserService {
 		if (list.isEmpty()) {
 			return false;
 		}else{
+			user = list.get(0);
 			return true;
 		}
 	}

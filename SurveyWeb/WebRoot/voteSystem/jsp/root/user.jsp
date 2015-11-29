@@ -47,9 +47,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <br>
       <div class="jumbotron">
         <h1>欢迎回来</h1>
-        <p>admin <span class="label label-success">一级管理员</span></p>
+        <p>${username } <span class="label label-success">一级管理员</span></p>
 
-        <p>您上次登陆的时间为：2015年11月26日</p>
+        <p>您上次登陆的时间为：${root_UserModel.lastLoginTime }</p>
+        <p>您上次登陆的IP为：${root_UserModel.lastLoginIp }(${root_UserModel.lastLoginAddress })</p>
         <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" href="#" role="button">修改密码</a> <a class="btn btn-warning btn-lg" href="#" role="button">注销登陆</a></p>
         <p></p>
       </div>
@@ -72,7 +73,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <h4 class="modal-title" id="myModalLabel">修改密码</h4>
           </div>
           <div class="modal-body">
-            
+            <input type="text" class="form-control input-sm" style="display:inline;">
+            <input type="text" class="form-control input-sm" style="display:inline;">
+            <input type="text" class="form-control input-sm" style="display:inline;">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

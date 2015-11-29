@@ -90,11 +90,11 @@ public class LoginAction extends  ActionSupport{
 			if (userService.login(username, password)) {
 				//写入用户数据到session中
 				User user = userService.getCurrentUser();
-				Map map = ActionContext.getContext().getSession();
-				map.put("userId", user.getUserId());
-				map.put("username", user.getUsername());
-				map.put("privilege", user.getPrivilege());
-				map.put("ip", ServletActionContext.getRequest().getRemoteAddr());
+				ServletActionContext.getRequest().getSession().setAttribute("userId", user.getUserId());
+				ServletActionContext.getRequest().getSession().setAttribute("username", user.getUsername());
+				ServletActionContext.getRequest().getSession().setAttribute("ip", ServletActionContext.getRequest().getRemoteAddr());
+				ServletActionContext.getRequest().getSession().setAttribute("privilege", user.getPrivilege());
+				
 				loginlogService.addLoginLog(userService.getUserIdByUsername(username), ServletActionContext.getRequest().getRemoteAddr(), System.currentTimeMillis(), 1, "");
 				//root用户返回root 非root用户返回user
 				return "root";
