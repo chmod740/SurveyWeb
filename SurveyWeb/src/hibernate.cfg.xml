@@ -55,6 +55,8 @@
 
 		<mapping resource="com/imudges/survey/bean/User.hbm.xml" />
 		<mapping resource="com/imudges/survey/bean/Loginlog.hbm.xml" />
+		<mapping resource="com/imudges/survey/bean/Survey.hbm.xml" />
+		<mapping resource="com/imudges/survey/bean/Opt.hbm.xml" />
 
 
 	</session-factory>
