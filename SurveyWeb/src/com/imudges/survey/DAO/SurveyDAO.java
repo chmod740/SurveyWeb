@@ -29,6 +29,7 @@ public class SurveyDAO extends BaseHibernateDAO {
 	public static final String CREATE_TIME = "createTime";
 	public static final String START_TIME = "startTime";
 	public static final String END_TIME = "endTime";
+	public static final String DESCRIPTION = "description";
 
 	public void save(Survey transientInstance) {
 		log.debug("saving Survey instance");
@@ -116,6 +117,10 @@ public class SurveyDAO extends BaseHibernateDAO {
 
 	public List findByEndTime(Object endTime) {
 		return findByProperty(END_TIME, endTime);
+	}
+
+	public List findByDescription(Object description) {
+		return findByProperty(DESCRIPTION, description);
 	}
 
 	public List findAll() {

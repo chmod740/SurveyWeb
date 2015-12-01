@@ -13,6 +13,7 @@ public class Survey implements java.io.Serializable {
 	private String createTime;
 	private String startTime;
 	private String endTime;
+	private String description;
 
 	// Constructors
 
@@ -22,11 +23,12 @@ public class Survey implements java.io.Serializable {
 
 	/** full constructor */
 	public Survey(String theme, String createTime, String startTime,
-			String endTime) {
+			String endTime, String description) {
 		this.theme = theme;
 		this.createTime = createTime;
 		this.startTime = startTime;
 		this.endTime = endTime;
+		this.description = description;
 	}
 
 	// Property accessors
@@ -69,6 +71,14 @@ public class Survey implements java.io.Serializable {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

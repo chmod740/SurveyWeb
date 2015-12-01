@@ -1,5 +1,9 @@
 package com.imudges.survey.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.imudges.survey.DAO.OptDAO;
 import com.imudges.survey.DAO.QuestionDAO;
 import com.imudges.survey.DAO.SurveyDAO;
@@ -61,13 +65,40 @@ public class SurveyService {
 			String theme;//问卷主题
 			String startTimeString;
 			String endTimeString;
+			String description;
 			theme = surveyString.split("###")[0];
-			startTimeString = surveyString.split("###")[1];
-			endTimeString = surveyString.split("###")[2];
-			String content = surveyString.split("###")[3];
+			description = surveyString.split("###")[1];
+			startTimeString = surveyString.split("###")[2];
+			endTimeString = surveyString.split("###")[3];
+			
+			String content = surveyString.split("###")[4];
 			
 			//封装成Survey对象存入数据库表
 			survey.setTheme(theme);
+			
+			//生成开始时间
+			SimpleDateFormat format=new SimpleDateFormat("yyyy/MM/dd - HH:mm:ss");
+			String dateString=startTimeString+":00";
+			try {
+				Date date=format.parse(dateString);
+				startTimeString = date.getTime()+"";
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				startTimeString = "0";
+			}
+			//生成结束时间
+			format=new SimpleDateFormat("yyyy/MM/dd - HH:mm:ss");
+			dateString=endTimeString+":00";
+			try {
+				Date date=format.parse(dateString);
+				endTimeString = date.getTime()+"";
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				endTimeString = "0";
+			}
+			
 			survey.setStartTime(startTimeString);
 			survey.setEndTime(endTimeString);
 			surveyDAO.save(survey);

@@ -22,5 +22,8 @@
         <property name="endTime" type="java.lang.String">
             <column name="endTime" />
         </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<head>
 		<meta charset="utf-8">
-		<title>Responsive Nav &middot; Advanced Left Navigation Demo</title>
+		<title>乌拉特前旗干部考核系统</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<!--[if lte IE 8]><link rel="stylesheet" href="voteSystem/css/responsive-nav.css"><![endif]-->
 		<!--[if gt IE 8]><!-->
@@ -40,9 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<div role="navigation" id="foo" class="nav-collapse">
 			<ul>
-				<li><a href="user.html">主页</a></li>
-				<li><a href="manageFrom.html">考核管理</a></li>
-				<li class="active"><a href="addFrom.html">添加考核</a></li>
+				<li><a href="root_User.action">主页</a></li>
+				<li><a href="#">考核管理</a></li>
+				<li class="active"><a href="#">添加考核</a></li>
 				<li><a href="#">Blog</a></li>
 			</ul>
 		</div>

@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <ul>
         <li class="active"><a href="root_User.action">主页</a></li>
         <li><a href="#">考核管理</a></li>
-        <li><a href="#">添加考核</a></li>
+        <li><a href="addSurvey.action">添加考核</a></li>
         <li><a href="#">Blog</a></li>
       </ul>
     </div>
@@ -74,9 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <h4 class="modal-title" id="myModalLabel">修改密码</h4>
           </div>
           <div class="modal-body">
-            <input type="text" class="form-control input-sm" id="oldPass" placeholder="请输入旧密码" style="display:inline;">
-            <input type="text" class="form-control input-sm" id="newPass1" placeholder="请输入新密码" style="display:inline;">
-            <input type="text" class="form-control input-sm" id="newPass2" placeholder="请再次输入新密码" style="display:inline;">
+            <input type="password" class="form-control input-sm" id="oldPass" placeholder="请输入旧密码" style="display:inline;">
+            <input type="password" class="form-control input-sm" id="newPass1" placeholder="请输入新密码" style="display:inline;">
+            <input type="password" class="form-control input-sm" id="newPass2" placeholder="请再次输入新密码" style="display:inline;">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
