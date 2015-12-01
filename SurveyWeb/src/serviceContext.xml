@@ -15,4 +15,5 @@ default-autowire="byName">
 	 -->
 	 <bean id="userService" class="com.imudges.survey.service.UserService" scope="prototype" autowire="default"></bean>
 	 <bean id="loginlogService" class="com.imudges.survey.service.LoginlogService" scope="prototype" autowire="default"></bean>
+	 <bean id="surveyServic" class="com.imudges.survey.service.SurveyService" scope="prototype" autowire="default"></bean>
 </beans>

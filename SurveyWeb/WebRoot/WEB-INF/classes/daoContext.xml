@@ -21,4 +21,7 @@ default-autowire="byName">
      -->
 	<bean id="userDAO" class="com.imudges.survey.DAO.UserDAO" scope="prototype" autowire="default"></bean>
 	<bean id="loginlogDAO" class="com.imudges.survey.DAO.LoginlogDAO" scope="prototype" autowire="default"></bean>
+	<bean id="surveyDAO" class="com.imudges.survey.DAO.SurveyDAO" scope="prototype" autowire="default"></bean>
+	<bean id="questionDAO" class="com.imudges.survey.DAO.QuestionDAO" scope="prototype" autowire="default"></bean>
+	<bean id="optDAO" class="com.imudges.survey.DAO.OptDAO" scope="prototype" autowire="default"></bean>
 </beans>

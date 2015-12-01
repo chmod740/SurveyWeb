@@ -43,6 +43,13 @@
 		
 		<action name="changePassword" class="changePasswordAction">
 		    <result name="success">/voteSystem/jsp/blank.jsp</result>
+		    <result name="login" type="redirect">/logout.action</result>
+		</action>
+		
+		<action name="addSurvey" class="addSurveyAction">
+		    <result name="success">/voteSystem/jsp/blank.jsp</result>
+		    <result name="login" type="redirect">/logout.action</result>
+		    <result name="show">/voteSystem/jsp/root/addForm.jsp</result>
 		</action>
 	</package>
 </struts>    
