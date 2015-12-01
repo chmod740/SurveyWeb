@@ -109,12 +109,16 @@ public class SurveyService {
 				String questionType = questionString.split("***")[1];
 				String questionText = questionString.split("***")[2];
 				question.setTitle(title);
-				if(questionType.equals(1)) {
+				if(questionType.equals("1")) {
 					question.setType(1);//1：单选
-				}else {
-					question.setType(2);//2：问答
 				}
-				question.setText(questionText);
+				if (questionType.equals("2")) {
+					question.setType(2);
+				}
+				if (questionType.equals("3")) {
+					question.setType(3);
+				}
+				question.setText(questionText);//包括所有的选项数据
 				question.setSurveyId(survey.getSurveyId());
 				questionDAO.save(question);//保存问题数据
 			}

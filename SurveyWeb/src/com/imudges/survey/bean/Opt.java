@@ -10,7 +10,7 @@ public class Opt implements java.io.Serializable {
 
 	private Integer optId;
 	private String secretId;
-	private String survey;
+	private Integer surveyId;
 	private String result;
 	private Integer submit;
 
@@ -21,9 +21,9 @@ public class Opt implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Opt(String secretId, String survey, String result, Integer submit) {
+	public Opt(String secretId, Integer surveyId, String result, Integer submit) {
 		this.secretId = secretId;
-		this.survey = survey;
+		this.surveyId = surveyId;
 		this.result = result;
 		this.submit = submit;
 	}
@@ -46,12 +46,12 @@ public class Opt implements java.io.Serializable {
 		this.secretId = secretId;
 	}
 
-	public String getSurvey() {
-		return this.survey;
+	public Integer getSurveyId() {
+		return this.surveyId;
 	}
 
-	public void setSurvey(String survey) {
-		this.survey = survey;
+	public void setSurveyId(Integer surveyId) {
+		this.surveyId = surveyId;
 	}
 
 	public String getResult() {

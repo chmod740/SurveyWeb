@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Tue Dec 01 19:36:53 CST 2015
+#Tue Dec 01 19:53:05 CST 2015
 genBasicCompId=false
 sessionFactoryName=com.imudges.survey.DAO.HibernateSessionFactory
 profile=
@@ -18,4 +18,3 @@ genAnnotations=false
 reSettingsFile=
 configFile=/SurveyWeb/src/hibernate.cfg.xml
 createConfigFile=true
-baseDaoClass=com.imudges.survey.DAO.BaseHibernateDAO
