@@ -39,7 +39,6 @@
 	<classpathentry kind="lib" path="lib/javassist-3.11.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/json-lib-2.3-jdk15.jar"/>
 	<classpathentry kind="lib" path="lib/mchange-commons-java-0.2.3.4.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.26-bin.jar"/>
 	<classpathentry kind="lib" path="lib/ognl-3.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-4.2.1.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-4.2.1.RELEASE-sources.jar"/>
@@ -109,5 +108,6 @@
 	<classpathentry kind="lib" path="lib/commons-lang3-3.2.jar"/>
 	<classpathentry kind="lib" path="lib/gson-2.2.4.jar"/>
 	<classpathentry kind="lib" path="lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.35-bin.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
